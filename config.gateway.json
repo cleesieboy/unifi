@@ -1,0 +1,35 @@
+{
+	"firewall": {
+		"modify": {
+			"LOAD_BALANCE": {
+				"rule": {
+					"2640": {
+						"action": "modify",
+						"modify": {
+							"table": "5"
+						},
+						"protocol": "all",
+						"source": {
+							"address": "192.168.1.199"
+						}
+					}
+				}
+			}
+		}
+	},
+	"protocols": {
+		"static": {
+			"table": {
+				"5": {
+					"route": {
+						"0.0.0.0/0": {
+							"next-hop": {
+								"100.124.157.134": "''"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
